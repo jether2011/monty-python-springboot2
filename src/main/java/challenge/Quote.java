@@ -15,6 +15,7 @@ public final class Quote implements Serializable {
 	public Quote() {}
 	
 	private Quote(Integer id, String actor, String quote){
+		this.id = id;
 		this.actor = actor;
 		this.quote = quote;
 	}
