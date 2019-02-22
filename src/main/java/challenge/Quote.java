@@ -2,19 +2,18 @@ package challenge;
 
 import java.io.Serializable;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
-import com.fasterxml.jackson.annotation.JsonProperty;
-
-public class Quote implements Serializable {
+public final class Quote implements Serializable {
 
 	private static final long serialVersionUID = 1L;
-	@JsonIgnore
 	private Integer id;
-	@JsonProperty("actor")
 	private String actor;
-	@JsonProperty("quote")
 	private String quote;
 
+	/**
+	 * Constructor to framework use
+	 */
+	public Quote() {}
+	
 	private Quote(Integer id, String actor, String quote){
 		this.actor = actor;
 		this.quote = quote;
@@ -24,30 +23,23 @@ public class Quote implements Serializable {
 		return new Quote(id, actor, quote);
 	}
 
-	/**
-	 * Gettters
-	 */
 	public Integer getId() {
-		return null;
+		return this.id;
 	}
-
-	// public void setId(Integer id) {
-
-	// }
 
 	public String getActor() {
-		return null;
+		return this.actor;
 	}
-
-	// public void setActor(String actor) {
-
-	// }
-
+	
 	public String getQuote() {
-		return null;
+		return this.quote;
 	}
 
-	// public void setQuote(String quote) {
-
-	// }
+	@Override
+	public String toString() {
+		StringBuilder builder = new StringBuilder();
+		builder.append("Quote [id=").append(id).append(", actor=").append(actor).append(", quote=").append(quote)
+				.append("]");
+		return builder.toString();
+	}
 }
