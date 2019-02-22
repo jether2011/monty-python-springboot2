@@ -34,7 +34,22 @@ public final class Quote implements Serializable {
 	public String getQuote() {
 		return this.quote;
 	}
+	
+	/**
+	 * Need the Setters to use in Code:Nation test
+	 */
+	public void setId(Integer id) {
+		this.id = id;
+	}
 
+	public void setActor(String actor) {
+		this.actor = actor;
+	}
+
+	public void setQuote(String quote) {
+		this.quote = quote;
+	}
+	
 	@Override
 	public String toString() {
 		StringBuilder builder = new StringBuilder();
